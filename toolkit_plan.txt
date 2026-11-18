@@ -1,0 +1,55 @@
+
+PROJECT PLAN: PERSONAL MINI-TOOLKIT (WEEK 8 FINAL PROJECT)
+
+
+1. PROJECT OVERVIEW
+-------------------
+A command-line Python application featuring an interactive main menu that
+allows users to navigate between three core utilities: a Calculator, a
+Number Guessing Game, and a To-Do List Manager. All output messages use
+Python f-strings for clean, consistent formatting.
+
+2. CORE PYTHON CONCEPTS USED
+----------------------------
+- Loops:
+  * Outer while loop for the persistent main menu.
+  * Inner while loops for the Guessing Game and To-Do List sub-menus.
+- Conditionals (if / elif / else):
+  * Menu selection routing, higher/lower guess evaluation, and zero-division checks.
+- Functions:
+  * Modular design separating main_menu(), calculator(), guessing_game(), and todo_list().
+- Lists & List Methods:
+  * Storing tasks dynamically using .append(), .pop() / .remove(), and enumerate().
+- Exception Handling (try / except):
+  * Catching ValueError on non-numeric user inputs to prevent crashes.
+- String Formatting:
+  * Consistent use of f-strings (e.g., f"Result: {result}") across all outputs.
+
+3. TOOL BREAKDOWN & LOGIC
+-------------------------
+Tool 1: Basic Calculator
+- Prompts the user for two numbers and an arithmetic operator (+, -, *, /).
+- Validates numeric inputs using try/except blocks.
+- Prevents division by zero with an explicit conditional check.
+- Displays formatted output using f-strings.
+
+Tool 2: Number Guessing Game
+- Generates a random target integer (e.g., between 1 and 100) using the random module.
+- Runs a continuous while loop prompting the user until the exact number is guessed.
+- Tracks attempt count and provides immediate f-string hints ("Try higher!" or "Try lower!").
+- Congratulates the user with the total number of attempts upon guessing correctly.
+
+Tool 3: To-Do List Manager
+- Maintains a Python list to store active tasks.
+- Runs an inner while loop offering options to:
+  1. View current tasks (numbered list).
+  2. Add a new task to the list.
+  3. Remove a completed task by number or name (with bounds/existence validation).
+  4. Return to the main menu.
+- Formats all prompts, task displays, and confirmations using f-strings.
+
+4. MAIN MENU FLOW
+-----------------
+- Displays numbered options (1. Calculator, 2. Guessing Game, 3. To-Do List, 4. Exit).
+- Validates menu input and handles invalid entries gracefully without crashing.
+- Automatically returns the user to the main menu after exiting any individual tool.
